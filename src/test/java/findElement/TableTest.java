@@ -27,26 +27,30 @@ public class TableTest {
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/tables");
         List<WebElement> dueColumn = driver.findElements(By.xpath("//table[@id='table1']/tbody/tr/td[4]"));
-        List<Float> dues = new ArrayList<>();
-        dueColumn.forEach(element -> dues.add(Float.valueOf(element.getText().trim().replace("$", ""))));
-        System.out.println(dues);
+        //List<Float> dues = new ArrayList<>();
 
-        /*
+        //System.out.println(dues);
+
         List<Float> dues =  dueColumn
                 .stream()
                 .map(element -> {
                     return Float.valueOf(element.getText().trim().replace("$",""));
                 })
                 .collect(Collectors.toList());
-         */
-        String fistNameLocator = "//table[@id='table1']/tbody/tr[%s]/td[2]";
 
+        //dueColumn.forEach(element -> dues.add(Float.valueOf(element.getText().trim().replace("$", ""))));
+        String firstNameLocator = "//table[@id='table1']/tbody/tr[%s]/td[2]";
+        String lastNameLocator = "//table[@id='table1']/tbody/tr[%s]/td[1]";
+
+        //String firstName = driver.
+        //        findElement(By.xpath(String.format("//table[@id='table1']/tbody/tr[%s]/td[2]", getLargestIndex(dues)))).getText();
         String firstName = driver.
-                findElement(By.xpath(String.format("//table[@id='table1']/tbody/tr[%s]/td[2]", getLargestIndex(dues)))).getText();
+                        findElement(By.xpath(String.format(firstNameLocator, getLargestIndex(dues)))).getText();
 
+//        String lastName = driver.
+//                findElement(By.xpath(String.format("//table[@id='table1']/tbody/tr[%s]/td[1]", getLargestIndex(dues)))).getText();
         String lastName = driver.
-                findElement(By.xpath(String.format("//table[@id='table1']/tbody/tr[%s]/td[1]", getLargestIndex(dues)))).getText();
-
+                findElement(By.xpath(String.format(lastNameLocator, getLargestIndex(dues)))).getText();
 
         Assert.assertEquals(String.format("%s %s", lastName, firstName), "Doe Jason");
     }
@@ -80,22 +84,33 @@ public class TableTest {
         }
         return largestindex+1;
     }
-     /*  @Test
+       @Test
         void allCellValue () {
             WebDriver driver = new ChromeDriver();
             driver.get("https://the-internet.herokuapp.com/tables");
-           List<WebElement> rows = driver.findElements(By.xpath("//table[@id='table1']/tbody/tr/td"));
+           List<WebElement> rows = driver.findElements(By.xpath("//table[@id='table1']/tbody/tr"));
             //List<WebElement> cells = driver.findElements(By.xpath("//table[@id='table1']/tbody/tr/td"));
-            List<String> cellValue = rows
-                    .stream()
-                    .forEach(element -> System.out.println(element.getText()));
+            //rows.stream().forEach(element -> System.out.println(element.getText()));
 
-            rows.stream().forEach(element -> System.out.println(element.findElement(By.tagName("td")).getText()));
+            //rows.stream().forEach(element -> System.out.println(element.findElement(By.tagName("td")).getText()));
+
+           List<Person> persons = rows.stream().map(element -> {
+               return toPerson(element);
+           }).collect(Collectors.toList());
+
+           List<Float> dues = persons.stream().map(Person::getDue).collect(Collectors.toList());
+           persons.stream().forEach(person -> System.out.println(person.getDue()));
 
 
-            List<Person> persons = rows.stream().map(element -> {
-                return toPerson(element);
-            } ).collect(Collectors.toList());
+
+            /*-----assert --------
+            persons.forEach(person -> {
+                Assert.assertEquals(person.getFirstName(), "");
+            });
+
+           for (Person p : persons) {
+
+           }*/
         }
 
         private  Person toPerson(WebElement element){
@@ -106,7 +121,7 @@ public class TableTest {
                 trim().replace("$",""));
         String website = element.findElements(By.tagName("td")).get(4).getText();
 
-        return new Person(lastName,firstName,email,due,website);
-        }*/
+        return new Person(lastName,firstName,email,website, due);
+        }
 
 }
