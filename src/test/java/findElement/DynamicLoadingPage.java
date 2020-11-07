@@ -23,7 +23,7 @@ public class DynamicLoadingPage {
         //wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(driver.findElement(By.x)))
         String finished = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("finish")))
                 .findElement(By.tagName("h4")).getText().trim();
-        //String finished = driver.findElement(By.xpath("//*[@id='finish']/h4")).getText().trim();
+
         Assert.assertEquals(finished,"Hello World!");
     }
 
@@ -35,6 +35,12 @@ public class DynamicLoadingPage {
         WebDriverWait wait = new WebDriverWait(driver,30);
         String finished = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("finish")))
                 .findElement(By.xpath("//div[@id='start']/button")).getText();
+
+
+
+
+        //String finished = driver.findElement(By.xpath("//*[@id='finish']/h4")).getText().trim();
+        Assert.assertEquals(finished,"Hello World!");
 
     }
 }

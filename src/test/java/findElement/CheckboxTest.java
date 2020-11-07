@@ -1,5 +1,6 @@
 package findElement;
 
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CheckboxPage;
@@ -15,5 +16,6 @@ public class CheckboxTest extends BaseTest {
         checkboxPage.checkOn("1");
         Assert.assertTrue(checkboxPage.getCheckbox("1").isSelected());
     }
+
 
 }
