@@ -25,7 +25,7 @@ public class JSAlerts {
         result = driver.findElement(By.id("result")).getText().trim();
         Assert.assertEquals(result, "You clicked: Cancel");
 
-        driver.findElement(By.xpath("//button[.='Click for JS Confirm']")).click();
+        driver.findElement(By.xpath("//button[.='Click f `or JS Confirm']")).click();
         driver.switchTo().alert().accept();
         result = driver.findElement(By.id("result")).getText().trim();
         Assert.assertEquals(result, "You clicked: Ok");

@@ -23,10 +23,18 @@ public class DynamicLoadingPage {
         //wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(driver.findElement(By.x)))
         String finished = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("finish")))
                 .findElement(By.tagName("h4")).getText().trim();
-
-
-
         //String finished = driver.findElement(By.xpath("//*[@id='finish']/h4")).getText().trim();
         Assert.assertEquals(finished,"Hello World!");
+    }
+
+    @Test
+    public void waitTest(){
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
+        driver.findElement(By.xpath("//div[@id='start']/button")).click();
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        String finished = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("finish")))
+                .findElement(By.xpath("//div[@id='start']/button")).getText();
+
     }
 }
