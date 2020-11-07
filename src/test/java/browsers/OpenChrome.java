@@ -12,7 +12,6 @@ public class OpenChrome {
         //driver.get("https://google.com.vn");
         driver.navigate().to("https://google.com.vn");
         driver.manage().window().maximize();
-
         driver.close();
         //driver.quit();
     }
