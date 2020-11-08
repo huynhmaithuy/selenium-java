@@ -11,12 +11,12 @@ import pages.LoginPage;
 
 import javax.security.auth.login.FailedLoginException;
 
-public class LoginTest {
+public class LoginTest extends BaseTest{
     @Parameters({"browserName"})
     @Test
     void withValidCredentials(String browserName){
        // WebDriver driver = new ChromeDriver();
-       Browser.launch(browserName);
+       //Browser.launch(browserName);
         //driver.get("https://the-internet.herokuapp.com/login");
        // driver.findElement(By.id("username")).sendKeys("tomsmith");
       /*  driver.findElement(By.xpath("//label[.='Username']/following-sibling::input"))
