@@ -1,50 +1,56 @@
 <suite name="the internet page">
 
-<!--    <test name="run on chrome1">-->
-<!--        <parameter name="browserName" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="testcases.LoginTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="run on firefox">-->
+    <test name="login">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="testcases.LoginTest"/>
+        </classes>
+    </test>
+<!--    <test name="">-->
 <!--        <parameter name="browserName" value="firefox"/>-->
 <!--        <classes>-->
 <!--            <class name="testcases.LoginTest"/>-->
 <!--        </classes>-->
 <!--    </test>-->
-<!--    <test name="run on chrome">-->
-<!--        <parameter name="browserName" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="testcases.CheckboxTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="basic auth">-->
-<!--        <parameter name="browserName" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="testcases.BasicAuthentication"/>-->
-<!--        </classes>-->
-<!--    </test>
--->
-<!--    <test name="basic auth">-->
-<!--        <parameter name="browserName" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="testcases.DropdownTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="basic auth">-->
-<!--        <parameter name="browserName" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="testcases.TableTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="bmi">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="testcases.BMITest"/>
+        </classes>
+    </test>
+    <test name="checkbox">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="testcases.CheckboxTest"/>
+        </classes>
+    </test>
+    <test name="basic auth">-->
+       <parameter name="browserName" value="chrome"/>-->
+        <classes>-->
+          <class name="testcases.BasicAuthentication"/>-->
+       </classes>-->
+   </test>
 
-<!--    <test name="basic auth">-->
-<!--        <parameter name="browserName" value="chrome"/>-->
-<!--        <classes>-->
-<!--            <class name="testcases.JSAlerts"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-    <test name="basic auth">
+    <test name="dropdown">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="testcases.DropdownTest"/>
+        </classes>
+    </test>
+    <test name="table">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="testcases.TableTest"/>
+        </classes>
+    </test>
+
+    <test name="alert">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="testcases.JSAlerts"/>
+        </classes>
+    </test>
+    <test name="hyperlink">
         <parameter name="browserName" value="chrome"/>
         <classes>
             <class name="testcases.HyperLinkTest"/>
