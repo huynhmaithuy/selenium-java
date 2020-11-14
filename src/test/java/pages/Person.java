@@ -1,4 +1,4 @@
-package findElement;
+package pages;
 
 public class Person {
 
@@ -7,7 +7,6 @@ public class Person {
     private String email;
     private String website;
     private Float due;
-
 
     public String getFirstName() {
         return firstName;
@@ -48,19 +47,12 @@ public class Person {
         this.due = due;
     }
 
-
-
     public Person(String firstName, String lastName, String email, String website, Float due) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.website = website;
         this.due = due;
-    }
-
-
-    public Person()
-    {
     }
 
 }

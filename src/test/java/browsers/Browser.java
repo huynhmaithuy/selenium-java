@@ -2,7 +2,10 @@ package browsers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -20,11 +23,17 @@ public class Browser {
                 break;
             }
             case "firefox": {
-                driver = new FirefoxDriver();
+                FirefoxBinary firefoxBinary = new FirefoxBinary();
+                firefoxBinary.addCommandLineOptions("--headless");
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                firefoxOptions.setBinary(firefoxBinary);
+                driver = new FirefoxDriver(firefoxOptions);
                 break;
             }
             case "chrome": {
-                driver = new ChromeDriver();
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.setHeadless(true);
+                driver = new ChromeDriver(chromeOptions);
                 break;
             }
             case "safari": {

@@ -1,0 +1,8 @@
+<suite name="demo suite">
+    <test name="chrome">
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+            <class name="testcases.TodoTest"/>
+        </classes>
+    </test>
+</suite>

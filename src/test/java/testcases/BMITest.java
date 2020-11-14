@@ -1,4 +1,4 @@
-package findElement;
+package testcases;
 
 
 import org.testng.Assert;

@@ -26,7 +26,6 @@ public class LoginPage extends BasePage {
     private By loginBtn = By.xpath("//button[@type='submit']");
 
 
-
     @Override
     public void open() {
         driver.get("https://the-internet.herokuapp.com/login");

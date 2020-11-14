@@ -1,15 +1,53 @@
 <suite name="the internet page">
 
-    <test name="run on chrome">
+<!--    <test name="run on chrome1">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="testcases.LoginTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="run on firefox">-->
+<!--        <parameter name="browserName" value="firefox"/>-->
+<!--        <classes>-->
+<!--            <class name="testcases.LoginTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="run on chrome">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="testcases.CheckboxTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="basic auth">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="testcases.BasicAuthentication"/>-->
+<!--        </classes>-->
+<!--    </test>
+-->
+<!--    <test name="basic auth">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="testcases.DropdownTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="basic auth">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="testcases.TableTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="basic auth">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="testcases.JSAlerts"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="basic auth">
         <parameter name="browserName" value="chrome"/>
         <classes>
-            <class name="testcases.LoginTest"/>
-        </classes>
-    </test>
-    <test name="run on firefox">
-        <parameter name="browserName" value="firefox"/>
-        <classes>
-            <class name="testcases.LoginTest"/>
+            <class name="testcases.HyperLinkTest"/>
         </classes>
     </test>
 </suite>
