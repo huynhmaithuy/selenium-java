@@ -12,9 +12,9 @@ import pages.LoginPage;
 import javax.security.auth.login.FailedLoginException;
 
 public class LoginTest extends BaseTest{
-    @Parameters({"browserName"})
+
     @Test
-    void withValidCredentials(String browserName){
+    void withValidCredentials(){
        // WebDriver driver = new ChromeDriver();
        //Browser.launch(browserName);
         //driver.get("https://the-internet.herokuapp.com/login");
@@ -42,6 +42,6 @@ public class LoginTest extends BaseTest{
 //                "Failed :(");
 
         Assert.assertTrue(loginpage.isLogin(),"login failed");
-        Browser.quit();
+//        Browser.quit();
     }
 }

@@ -9,6 +9,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BmiPage extends BasePage{
 
+//    private By metricBtn = By.xpath("//a[contains(.,'Metric Units')]");
+//    private By ageTxt = By.id("cage");
+//    private By genderTxt = By.id("csex1");
+//    private By heightTxt = By.id("cheightmeter");
+//    private By weightTxt = By.id("ckg");
+//    private By calculatorBtn = By.xpath("//input[@value='Calculate']");
+//    private By resultTxt = By.className("bigtext");
+
     public BmiPage() {
 
         PageFactory.initElements(Browser.getDriver(),this);

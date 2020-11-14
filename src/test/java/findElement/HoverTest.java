@@ -1,4 +1,4 @@
-package findElement;
+package testcases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -9,11 +9,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class HoverTest {
+public class HoverTest extends BaseTest {
     @Test
     void verifyLabelPresent(){
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/hovers");
+
         Actions mouse = new Actions(driver);
         mouse
                 .moveToElement(driver.findElement(By.xpath("//div[@id='content']//div[@class='figure'][1]")))

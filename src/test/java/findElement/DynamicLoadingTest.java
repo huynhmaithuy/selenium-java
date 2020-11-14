@@ -1,4 +1,4 @@
-package findElement;
+package testcases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class DynamicLoadingPage {
+public class DynamicLoadingTest {
     @Test
     void loadingTest() throws InterruptedException {
         WebDriver driver = new ChromeDriver();
@@ -25,22 +25,5 @@ public class DynamicLoadingPage {
                 .findElement(By.tagName("h4")).getText().trim();
 
         Assert.assertEquals(finished,"Hello World!");
-    }
-
-    @Test
-    public void waitTest(){
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
-        driver.findElement(By.xpath("//div[@id='start']/button")).click();
-        WebDriverWait wait = new WebDriverWait(driver,30);
-        String finished = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("finish")))
-                .findElement(By.xpath("//div[@id='start']/button")).getText();
-
-
-
-
-        //String finished = driver.findElement(By.xpath("//*[@id='finish']/h4")).getText().trim();
-        Assert.assertEquals(finished,"Hello World!");
-
     }
 }

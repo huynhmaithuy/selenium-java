@@ -1,7 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.How;
 
@@ -9,7 +7,7 @@ public class CheckboxPage extends BasePage {
     private String checkboxElemnent = "//form[@id='checkboxes']//input[%s]";
 
 
-
+    @Override
     public void open(){
         driver.get("https://the-internet.herokuapp.com/checkboxes");
     }
@@ -22,7 +20,5 @@ public class CheckboxPage extends BasePage {
         //return driver.findElement(By.xpath(String.format(checkboxElemnent,checkBoxName)));
         return find(How.XPATH, String.format(checkboxElemnent,checkBoxName));
     }
-
-
 
 }
