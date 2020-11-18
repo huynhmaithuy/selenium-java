@@ -6,6 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import pages.BasePage;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,10 +15,10 @@ public class CaptureScreenshot {
     @Test
     void captureWebPage(){
         WebDriver driver = new ChromeDriver();
-        driver.get("https://google.com.vn");
+        driver.get("https://google.com");
         File screenshot =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(screenshot, new File("./target/screenshot-google-"+System.currentTimeMillis()+".png"));
+            FileUtils.copyFile(screenshot, new File("./target/screenshot-"+System.currentTimeMillis()+".png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

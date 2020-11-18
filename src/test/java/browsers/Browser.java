@@ -1,5 +1,8 @@
 package browsers;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,6 +11,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Browser {
     public static WebDriver getDriver() {
@@ -34,6 +40,7 @@ public class Browser {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.setHeadless(true);
                 driver = new ChromeDriver(chromeOptions);
+//                driver = new ChromeDriver();
                 break;
             }
             case "safari": {
@@ -51,6 +58,14 @@ public class Browser {
         if (driver != null) {
             driver.quit();
         }
+    }
 
+    public static void captureWebPage(){
+        File screenshot =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(screenshot, new File("./target/screenshot-"+System.currentTimeMillis()+".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

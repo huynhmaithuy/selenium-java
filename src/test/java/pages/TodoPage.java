@@ -20,7 +20,7 @@ public class TodoPage extends BasePage {
     public WebElement getTask(String byName) {
         return driver.findElement(By.xpath(String.format("//label[.='%s']", byName)));
 
-        //return find(How.XPATH, String.format("//label[.='%s',byName);
+        //return find(How.XPATH, String.format("//label[.='%s']",byName));
     }
 
     public void selectTab(String name) {
