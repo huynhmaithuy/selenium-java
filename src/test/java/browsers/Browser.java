@@ -37,10 +37,10 @@ public class Browser {
                 break;
             }
             case "chrome": {
-//                ChromeOptions chromeOptions = new ChromeOptions();
-//                chromeOptions.setHeadless(true);
-//                driver = new ChromeDriver(chromeOptions);
-                driver = new ChromeDriver();
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.setHeadless(true);
+                driver = new ChromeDriver(chromeOptions);
+//                driver = new ChromeDriver();
                 break;
             }
             case "safari": {
