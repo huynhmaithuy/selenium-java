@@ -1,8 +1,22 @@
 <suite name="demo suite">
-    <test name="chrome">
+<!--    <test name="chrome">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="testcases.TodoTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="hover">-->
+<!--        <parameter name="browserName" value="chrome"/>-->
+<!--        <classes>-->
+<!--            <class name="testcases.HoverTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="dynamicloading">
         <parameter name="browserName" value="chrome"/>
         <classes>
-            <class name="testcases.TodoTest"/>
+            <class name="testcases.DynamicLoadingTest"/>
         </classes>
     </test>
+
 </suite>
